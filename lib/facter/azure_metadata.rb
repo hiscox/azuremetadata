@@ -29,6 +29,7 @@ Facter.add(:az_metadata) do
   end
 end
 
+# TODO: remove once $facts['compute'] has been removed
 Facter.add(:compute) do
   confine virtual: 'hyperv'
   setcode do
