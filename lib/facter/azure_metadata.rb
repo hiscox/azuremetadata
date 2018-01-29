@@ -24,7 +24,7 @@ Facter.add(:az_metadata) do
   confine virtual: 'hyperv'
   setcode do
     tags = metadata['compute']['tags'].split(';')
-    metadata['compute']['tags'] = Hash[tags.map { |tag| tag.split(':') }]
+    metadata['compute']['tags'] = Hash[tags.map { |tag| tag.split(':', 2) }]
     metadata
   end
 end
